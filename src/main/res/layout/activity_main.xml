@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android_app_remote_joystick.view_model.ViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/sky">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="80dp"
+            android:text="IP:"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="156dp"
+            android:text="Port:"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="224dp"
+            android:text="Connect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.434"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/textOfIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+            android:hint="Enter IP"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textOfPort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="148dp"
+            android:layout_marginEnd="64dp"
+            android:ems="10"
+
+            android:hint="Enter Port"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/constraintLayout"
+            android:layout_width="392dp"
+            android:layout_height="499dp"
+            android:layout_marginTop="306dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textOfPort"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="200dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="304dp"
+                android:max="200"
+                android:progress="100"
+                android:theme="@style/seekBarColor"
+                android:thumbTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="88dp"
+                android:clickable="false"
+                android:max="200"
+                android:rotation="90"
+                android:scrollY="-90dp"
+                android:theme="@style/seekBarColor"
+                android:thumbTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.398"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.example.android_app_remote_joystick.view.Joystick
+                android:id="@+id/joystick"
+                android:layout_width="215dp"
+                android:layout_height="193dp"
+                android:layout_marginTop="92dp"
+                android:layout_marginEnd="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
